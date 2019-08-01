@@ -7,22 +7,20 @@ router.get('/register', function(req, res) {
   res.render('register');
 });
 
-router.post('/register', async function(req, res, next) {
-  const firstName = req.body.name;
-  const secondName = req.body.surname;
+router.post('/addUser', async function(req, res, next) {
+  const name = req.body.name;
+  const surname = req.body.surname;
   const email = req.body.email;
-
-  req.checkBody('name', 'Name is required').notEmpty();
-  req.checkBody('email', 'Name is required').notEmpty();
   
   const user = new User({
-    name: firstName,
-    surname: secondName,
+    name: name,
+    surname: surname,
     email: email
   });
 
   await user.save();
   req.session.name = user.email;
+
   res.end();
 });
 
