@@ -20,6 +20,7 @@ router.post('/addUser', async function(req, res, next) {
 
   await user.save();
   req.session.name = user.email;
+
   res.end();
 });
 
