@@ -1,5 +1,9 @@
+const { User } = require('./User');
+const  Test  = require('./Test')
+const Words = require('./Words')
+
 //Add users to dataBase
-async function createUsers() {
+async function seeds() {
     let user1 = new User({ firstname: 'Andrey', secondname: 'Krolikov', email: 'krolikovandrey@gmail.com' })
     await user1.save()
 
@@ -15,7 +19,12 @@ async function createUsers() {
 
     let admin = new User({ firstname: 'admin', secondname: 'admin', email: 'admin' })
     await admin.save()
+
+    let words1 = new Words({ words: ['Слово'] })
+    await words1.save()
+
+    let test1 = new Test({ user: user1._id, countRight:10, positionRight:9,total:'Ну такое!' })
+    await test1.save()
 }
 
-
-
+seeds();

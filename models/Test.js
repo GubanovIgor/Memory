@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
+const User = require('../models/User')
 const { userSchema } = require('./User')
 mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
 const Schema = mongoose.Schema;
 const testSchema = new Schema({
-    user: [userSchema],
+    user: {type: Schema.Types.ObjectId, ref :'User'},
     countRight: Number,
     positionRight: Number,
     total: String,
 })
 
-const Words = mongoose.model("Words", wordsSchema);
-module.exports = Words;
+const Test = mongoose.model("Test", testSchema);
+module.exports = Test;
