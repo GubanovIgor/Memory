@@ -17,9 +17,5 @@ async function createUsers() {
     await admin.save()
 }
 
-//Add words collection to dataBase
-async function createWords() {
-    let words1 = new Words({ value: [''] })
-    await words1.save()
-}
+
 
