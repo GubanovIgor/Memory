@@ -1,0 +1,53 @@
+#main {
+  display: flex;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#form {
+  padding: 25px;
+  background: #ccc;
+  font: 18px;
+  font-family: 'Museo 300', Sans-Serif;
+}
+
+#name {
+  padding: 12px 10px 11px;
+  background: #e6e6e6;
+  margin: 10px;
+}
+
+#surname {
+  padding: 12px 10px 11px;
+  background: #e6e6e6;
+  margin: 10px;
+}
+
+#email {
+  padding: 12px 10px 11px;
+  background: #e6e6e6;
+  margin: 10px;
+}
+
+.button {
+  padding: 12px 10px 11px;
+  background: #e6e6e6;
+  margin: 12px 10px 11px;
+  text-align: center;
+}
+
+#button {
+  text-decoration: none;
+}
+
+#form > .register {
+  text-align: center;
+  font: 24px;
+  font-family: 'Museo 300', Sans-Serif;
+  margin: 0px;
+  color: #5c5e56;
+}
