@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const email = document.getElementById('email');
 
       const formData = {
-        name: name.value,
-        surname: surname.value,
+        firstName: name.value,
+        secondName: surname.value,
         email: email.value,
       }
 
