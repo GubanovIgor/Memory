@@ -1,0 +1,17 @@
+<div class='container'>
+  {{>register}}
+</div>
+
+<script>
+  const templateCodes = {
+    'instructions': {{{instructions}}},
+    'test': {{{test}}},
+    'stat': {{{stat}}},
+  }
+
+  const templates = {
+    'instructions': Handlebars.template(templateCodes.instructions),
+    'test': Handlebars.template(templateCodes.test),
+    'stat': Handlebars.template(templateCodes.stat),
+  }
+</script>
