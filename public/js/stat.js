@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',  (event) => {
     let resForm = document.getElementById('srchForm')
-    resForm & resForm.addEventListener('submit', async (e) => {
+    resForm && resForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         // console.log (e.target.emailsrch.value);
 
