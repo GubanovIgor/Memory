@@ -13,6 +13,7 @@ const hbs = handlebars.create({
 });
 
 const indexRouter = require('./routes/index')
+const testRouter = require('./routes/test')
 const userRouter = require('./routes/users');
 
 const mongoose = require("mongoose");
@@ -41,11 +42,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', testRouter);
 app.use('/', userRouter);
-
-app.get('/', function (req, res) {
-  res.send('register');
-});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
