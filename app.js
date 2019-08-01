@@ -5,6 +5,7 @@ const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 
 const indexRouter = require('./routes/index')
+const testRouter = require('./routes/test')
 
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
@@ -31,10 +32,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', testRouter);
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+// app.get('/', function (req, res) {
+//   res.send('Hello World!');
+// });
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
