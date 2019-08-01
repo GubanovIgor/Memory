@@ -1,26 +1,8 @@
-<form>
+<h1 class="big">Впишите в поля услышанные слова по порядку</h1>
 
-<div class="list_answers">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-<input id="answer_word">
-</div>
-
+<form id="list_master" class="flex flex-row" method="post" action="/statistica">
+    {{#each answers}}
+    {{>answerWord}}
+    {{/each}}
+    <input id="send" class="send_answers button" type="submit" value="Send answers">
 </form>
