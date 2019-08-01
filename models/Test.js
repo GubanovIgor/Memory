@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const { userSchema } = require('./User')
-mongoose.connect("mongodb://localhost:27017/Avito", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
 const Schema = mongoose.Schema;
 const testSchema = new Schema({
     user: [userSchema],
