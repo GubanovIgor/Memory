@@ -44,7 +44,7 @@ app.use('/', indexRouter);
 app.use('/', userRouter);
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.send('register');
 });
 
 app.listen(3000, function () {
