@@ -3,9 +3,18 @@ const path = require('path');
 const logger = require('morgan');
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
+const handlebars = require('express-handlebars');
+
+const hbs = handlebars.create({
+  defaultLayout: 'layout',
+  extname: 'hbs',
+  layoutsDir: path.join(__dirname, 'views'),
+  partialsDir: path.join(__dirname, 'views'),
+});
 
 const indexRouter = require('./routes/index')
 const testRouter = require('./routes/test')
+const userRouter = require('./routes/users');
 
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
@@ -25,6 +34,7 @@ app.use(session(sessionConfig));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.engine('hbs', hbs.engine);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/', testRouter);
+app.use('/', userRouter);
 
 // app.get('/', function (req, res) {
 //   res.send('Hello World!');
