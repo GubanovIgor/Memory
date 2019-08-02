@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         },
         body: JSON.stringify(formData),
       });
+      const data = await resp.json();
+      console.log(data);
+      const test = {
+        userName: data,
+      }
+
+      const container = document.querySelector('.container');
+      container.innerHTML = templates.instructions(test);
     }
   });
 });

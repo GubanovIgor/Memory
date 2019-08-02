@@ -3,14 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
-const handlebars = require('express-handlebars');
-
-const hbs = handlebars.create({
-  defaultLayout: 'layout',
-  extname: 'hbs',
-  layoutsDir: path.join(__dirname, 'views'),
-  partialsDir: path.join(__dirname, 'views'),
-});
+const { hbs } = require('./template');
 
 const indexRouter = require('./routes/index')
 const testRouter = require('./routes/test')
