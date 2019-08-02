@@ -15,7 +15,7 @@ router.post('/voice', async function (req, res, next) {
     let linkArr = [];
     for (let i = 0; i < words.length; i++) {
         console.log("!!!!!!!!!", words[i])
-        let voice = await fetch(encodeURI(`http://api.voicerss.org/?key=135a0cff008e4585a5da30ca99dc1283&hl=ru-ru&src=${words[i]}`));
+        let voice = await fetch(encodeURI(`http://api.voicerss.org/?key=2ef80508d40343b78a0e59b2ec27b45a&hl=ru-ru&src=${words[i]}`));
         let link = voice.url
         linkArr.push(link)
         console.log(linkArr)
