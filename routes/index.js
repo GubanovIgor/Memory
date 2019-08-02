@@ -4,7 +4,7 @@ const Test = require('../models/Test')
 const { User } = require('../models/User')
 const { exposeTemplate } = require('../template');
 const Words = require('../models/Words')
-
+const result = require('./result')
 
 
 router.get('/', exposeTemplate, function (req, res) {
@@ -13,6 +13,7 @@ router.get('/', exposeTemplate, function (req, res) {
         instructions: res.instructions,
         test: res.test,
         stat: res.stat,
+        playSounds: res.playSounds,
     });
 });
 
@@ -41,10 +42,42 @@ router.get('/test', async function (req, res) {
         firstName: user.firstName,
         secondName: user.secondName,
         email: user.email,
-        words: testWords
+        words: testWords,
+        countRight: 0,
+        positionRight: 0,
+        total: Good,
     })
     await test.save()
 })
+
+router.post('/answers', async function (req, res) {
+    const userAnswers = req.body
+    const test = await Test.findOne({ email: req.session.name })
+    const words = test.words
+    const yourResult = result(words, userAnswers)
+    
+    test.countRight = yourResult[0]
+    test.positionRight = yourResult[1]
+    if (yourResult[0] >= 19){
+        test.total = "У Вас отличная память"
+    }
+    if (10 < yourResult[0] < 19){
+        test.total = "Очень хороший результат"
+    }
+    if (0 < yourResult[0] <=10) {
+        test.total = "Возможно, Вам нужно потренировать память"
+    }
+    if (yourResult[0] === 0) {
+        test.total = "У Вас не памяти"
+    }
+    
+    
+    console.log(test);
+    res.end();
+})
+
+
+
 
 router.get('/stat', function (req, res) {
     res.render('stat');
@@ -57,10 +90,10 @@ router.post('/stat', async function (req, res, next) {
     res.json(tests);
 });
 
-router.post('/test', async function (req, res, next) {
-
+router.post('/sound', async function(req, res, next) {
+    console.log(req.session)
+    res.json(req.session.userName)
 })
-
 
 
 
