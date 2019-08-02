@@ -1,0 +1,28 @@
+.button_stat {
+  color: #fff;
+  font-size: 20px;
+  padding: 12px 10px 11px;
+  background: #d92632;
+  text-align: center;
+  width: 90px;
+  border-radius: 5px;
+  border-width: 1px 1px 1px 1px;
+  margin: 5px;
+}
+
+#srchForm > input {
+  font-size: 18px;
+  font-family: 'Museo 300', Sans-Serif;
+  padding: 10px;
+  background: #e6e6e6;
+  width: 220px;
+  border-width: 1px 1px 1px 1px;
+  margin: 5px;
+}
+
+.form-stat{
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
