@@ -17,6 +17,5 @@ const result = (answer, userAnswer) => {
   return [countMatchedOrder, countMatchedWord];
 };
 
-console.log(result(a, b));
 
 module.exports = result;

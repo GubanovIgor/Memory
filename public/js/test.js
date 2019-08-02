@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 },
                 body: JSON.stringify(formAnswers)
             });
-            const answers = await resp.json()
+            //const answers = await resp.json()
         }
     });
 });

@@ -41,7 +41,10 @@ router.get('/test', async function (req, res) {
         firstName: user.firstName,
         secondName: user.secondName,
         email: user.email,
-        words: testWords
+        words: testWords,
+        countRight: 0,
+        positionRight: 0,
+        total: Good,
     })
     await test.save()
 })
@@ -51,8 +54,24 @@ router.post('/answers', async function (req, res) {
     const test = await Test.findOne({ email: req.session.name })
     const words = test.words
     const yourResult = result(words, userAnswers)
-    console.log(yourResult);
-
+    
+    test.countRight = yourResult[0]
+    test.positionRight = yourResult[1]
+    if (yourResult[0] >= 19){
+        test.total = "У Вас отличная память"
+    }
+    if (10 < yourResult[0] < 19){
+        test.total = "Очень хороший результат"
+    }
+    if (0 < yourResult[0] <=10) {
+        test.total = "Возможно, Вам нужно потренировать память"
+    }
+    if (yourResult[0] === 0) {
+        test.total = "У Вас не памяти"
+    }
+    
+    
+    console.log(test);
     res.end();
 })
 
