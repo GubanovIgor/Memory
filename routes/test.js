@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/test1', function (req, res) {
+router.get('/getAnswers', function (req, res) {
     const answers = [
         {number: 1},
         {number: 2},

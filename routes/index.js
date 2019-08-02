@@ -13,6 +13,7 @@ router.get('/', exposeTemplate, function (req, res) {
         instructions: res.instructions,
         test: res.test,
         stat: res.stat,
+        playSounds: res.playSounds,
     });
 });
 
@@ -70,8 +71,9 @@ router.post('/stat', async function (req, res, next) {
     res.json(tests);
 });
 
-router.post('/test', async function (req, res, next) {
-
+router.post('/sound', async function(req, res, next) {
+    console.log(req.session)
+    res.json(req.session.userName)
 })
 
 
