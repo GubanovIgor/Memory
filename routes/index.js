@@ -16,36 +16,35 @@ router.get('/', exposeTemplate, function (req, res) {
     });
 });
 
-router.get('/test', async function (req, res){
+router.get('/test', async function (req, res) {
     const allWords = await Words.find()
     const randomWords = (arr) => {
         const wordsForTest = [];
         const length = arr.length;
         const set = {};
-      
+
         for (let i = 0; i < 20; i++) {
-          let randomN = Math.floor(Math.random() * length);
-          if (set[randomN] === undefined) {
-            set[randomN] = true;
-            wordsForTest.push(arr[randomN].value);
-          } else {
-            i--;
-          }
+            let randomN = Math.floor(Math.random() * length);
+            if (set[randomN] === undefined) {
+                set[randomN] = true;
+                wordsForTest.push(arr[randomN].value);
+            } else {
+                i--;
+            }
         };
         return wordsForTest;
-      }
+    }
     const testWords = randomWords(allWords)
-    const user = await User.findOne({email: req.session.name})
+    const user = await User.findOne({ email: req.session.name })
     const test = new Test({
         user: user._id,
         firstName: user.firstName,
         secondName: user.secondName,
-        email: user.email, 
+        email: user.email,
         words: testWords
     })
-
-   console.log(test)
- })
+    await test.save()
+})
 
 router.get('/stat', function (req, res) {
     res.render('stat');
@@ -54,11 +53,11 @@ router.get('/stat', function (req, res) {
 router.post('/stat', async function (req, res, next) {
     let user = await User.findOne({ email: req.body.email });
     let tests = await Test.find({ user: user._id })
-    
+
     res.json(tests);
 });
 
-router.post('/test', async function(req, res, next) {
+router.post('/test', async function (req, res, next) {
 
 })
 
