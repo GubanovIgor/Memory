@@ -4,7 +4,12 @@ const router = express.Router();
 const { User } = require('../models/User');
 
 router.get('/register', function(req, res) {
-  res.render('register');
+  res.render('register', {
+    instructions: res.instructions,
+    test: res.test,
+    stat: res.stat,
+  });
+
 });
 
 router.post('/addUser', async function(req, res, next) {
@@ -20,12 +25,9 @@ router.post('/addUser', async function(req, res, next) {
 
   await user.save();
   req.session.name = user.email;
+  
 
-  res.end();
+  res.json(name);
 });
 
 module.exports = router;
-
-// const user = require('./routes/user.js');
-
-// app.use('/users.js', users); в app.js
