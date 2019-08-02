@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 },
                 body: JSON.stringify(formAnswers)
             });
-            const answers = await resp.json()
+            const result = await resp.json()
+            console.log(result);
+            const container = document.querySelector('.container');
+            container.innerHTML = templates.showResult(result);
         }
     });
 });

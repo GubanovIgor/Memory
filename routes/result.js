@@ -7,7 +7,7 @@ const result = (answer, userAnswer) => {
   let length = answer.length;
 
   for (let i = 0; i < length; i++) {
-    if (answer[i] == userAnswer[i]) {
+    if (answer[i].toLowerCase() == userAnswer[i].toLowerCase()) {
       countMatchedOrder++;
     }
     if (userAnswer.indexOf(answer[i]) >= 0) {

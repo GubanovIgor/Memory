@@ -69,11 +69,19 @@ html {
   text-align: center;
   border-radius: 5px;
   border-width: 1px 1px 1px 1px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.instructions {
+  text-align: justify;
+  margin-top: 20px;
 }
 
 #button {
   text-decoration: none;
-  color: #212020;
+  color: white;
   font-size: 20px;
 }
 
@@ -135,4 +143,25 @@ html {
   padding: 20px;
 
   width: 300px;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer_word{
+  margin-top: 15px;
+  width: 180px;
+  height: 20px;
+}
+
+.number {
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
 }
