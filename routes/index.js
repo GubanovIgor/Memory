@@ -2,10 +2,16 @@ const express = require('express');
 const router = express.Router();
 const Test = require('../models/Test')
 const { User } = require('../models/User')
+const { exposeTemplate } = require('../template');
 
 
-router.get('/', function (req, res) {
-    res.render('register');
+router.get('/', exposeTemplate, function (req, res) {
+    res.render('index', {
+        register: res.register,
+        instructions: res.instructions,
+        test: res.test,
+        stat: res.stat,
+    });
 });
 
 
