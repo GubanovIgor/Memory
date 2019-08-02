@@ -1,5 +1,16 @@
-<form class="info_about_users" method='post' action='/admin'>
-    <div class="info_about_users-in">
-        РЕЗУЛЬТАТЫ ТЕСТИРОВАНИЯ
-    </div>
-</form>
+<label class="form-description">РЕЗУЛЬТАТЫ ТЕСТИРОВАНИЯ</label>
+
+
+{{#each arr}}
+<div class='formInfo'>
+        <div class='name'>ИМЯ: <span class='text'>{{this.name}}</span></div>
+        <div class='surname' type='text'>ФАМИЛИЯ: <span class='text'>{{this.surname}}</span></div>
+
+        <div class='email'>EMAIL: <span class='text'>{{this.email}}</span> </div>
+
+        <div class='countRight'>КОЛИЧЕСТВО ЗАПОМНЕННЫХ СЛОВ ВСЕГО: <span class='text'>{{this.countRight}}</span></div>
+
+        <div class='positionRight'>КОЛИЧЕСТВО ЗАПОМНЕННЫХ СЛОВ В ПОРЯДКЕ ИХ ВОСПРОИЗВЕДЕНИЯ:
+<span class='text'>{{this.positionRight}}</span></div>
+</div>
+{{/each}}

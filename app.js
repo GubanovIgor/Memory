@@ -14,6 +14,7 @@ const getRouter = require('./routes/routerGet');
 
 const voiceRouter = require('./routes/voice');
 
+
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
 
@@ -42,7 +43,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', testRouter);
 app.use('/', userRouter);
+
+
 app.use('/', voiceRouter);
+
 app.use('/', getRouter);
 // app.use('/', displayRouter);
 
