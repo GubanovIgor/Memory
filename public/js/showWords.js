@@ -8,12 +8,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
               answers.push(inputAnswers[i].value)
           }
           console.log(answers)
-          // resp = await fetch ('/test', {
-          //     method: "GET",
-          //     headers: {
-          //         "Accept": "application/json",
-          //     }
-          // })
+         
       }
   })
 })
