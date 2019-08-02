@@ -24,6 +24,9 @@ const exposeTemplate = async function (req, res, next) {
   const register = await hbs.getTemplate('views/register.hbs', {
     precompiled: true,
   });
+  const display = await hbs.getTemplate('views/display.hbs', {
+    precompiled: true
+  });
   res.register = register;
   res.instructions = instructions;
   res.test = test;
