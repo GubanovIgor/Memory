@@ -14,7 +14,9 @@ const result = (answer, userAnswer) => {
       countMatchedWord++;
     }
   }
-  return `Одинаковых слов: ${countMatchedWord} / ${length} \nМеста: ${countMatchedOrder} / ${length}`;
+  return [countMatchedOrder, countMatchedWord];
 };
 
 console.log(result(a, b));
+
+module.exports = result;
