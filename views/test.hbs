@@ -2,9 +2,12 @@
 
 <form id="list_master" class="flex flex-row" method="post" action="/statistic">
     <div class='test'>
-    {{#each answers}}
-    <div class='item'>{{>answerWord}}</div>
-    {{/each}}
+        {{#each answers}}
+        <div class='item'><label class="input">
+                <span class="number">{{this.number}}</span>
+                <input class="answer_word" type="text" name="name" value="">
+            </label></div>
+        {{/each}}
     </div>
     <input id="send" class="send_answers button" type="submit" value="ОТПРАВИТЬ">
 </form>

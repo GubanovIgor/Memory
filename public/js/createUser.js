@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.addEventListener('click', async function(e) {
+  document.addEventListener('click', async function (e) {
     if (e.target.classList.contains('auth')) {
       e.preventDefault();
       const name = document.getElementById('name');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
 
       const resp = await fetch('/addUser', {
-        method:'POST',
+        method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -27,6 +27,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       const container = document.querySelector('.container');
       container.innerHTML = templates.instructions(test);
+
+      const resp2 = await fetch('/createTest', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(),
+      });
     }
   });
 });

@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    let resbutton = document.getElementById('start')
+    let resbutton = document.getElementById('start-voice')
     resbutton && resbutton.addEventListener('click', async (e) => {
         e.preventDefault();
-        console.log(e)
-
-            ;
-
+        console.log('e.target');
         // нажатие кнопки на бек
         const reqback = await fetch(`/voice`, {
             method: 'POST',
@@ -16,31 +13,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
 
         const { linkArr } = await reqback.json()
-        console.log(linkArr)
-
-
-        // let a = 1600;
-        // let count = 0;
-
-        // function plays() {
-        //     console.log(audio)
-        //     audio.play();
-        //     while(count < linkArr.length - 1)
-        //     sound(count)
-        //     console.log(count);
-        // }
-
-
-
-        // function sound(count){
-        //     for (let i = 0; i < linkArr.length; i++) {
-        //         var audio =  new Audio(linkArr[i]);
-        //         setTimeout(plays, a)
-        //         a = a + 1600;
-        //         count++;
-        //     }
-        // }
-
 
         function sound() {
             function plays(n) {
@@ -57,25 +29,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
             plays(0)
         }
         sound()
-
-
-        // function play(url) {
-        //     var audio = new Audio(url);
-        //     audio.play();
-        // }
-
-        // for (let i = 0; i < linkArr.length; i++) {
-        //     setTimeout(function () {
-        //         play(linkArr[i])
-        //     },  2000);
-        // }
-
-
-
-
-
-
-
-
     })
 })

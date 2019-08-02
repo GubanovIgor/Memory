@@ -27,4 +27,4 @@ async function seeds() {
     await test1.save()
 }
 
-seeds();
+// seeds();

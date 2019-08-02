@@ -18,7 +18,7 @@ router.post('/addUser', async function(req, res, next) {
   });
 
   await user.save();
-  req.session.name = user.email;
+  req.session.email = user.email;
   
 
   res.json(name);

@@ -14,17 +14,19 @@ router.get('/', exposeTemplate, function (req, res) {
         test: res.test,
         stat: res.stat,
         playSounds: res.playSounds,
+        showResult: res.showResult,
     });
 });
 
-router.get('/test', async function (req, res) {
+router.post('/createTest', async function (req, res) {
+    console.log('asd')
     const allWords = await Words.find()
     const randomWords = (arr) => {
         const wordsForTest = [];
         const length = arr.length;
         const set = {};
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 5; i++) {
             let randomN = Math.floor(Math.random() * length);
             if (set[randomN] === undefined) {
                 set[randomN] = true;
@@ -36,7 +38,8 @@ router.get('/test', async function (req, res) {
         return wordsForTest;
     }
     const testWords = randomWords(allWords)
-    const user = await User.findOne({ email: req.session.name })
+    console.log(testWords);
+    const user = await User.findOne({ email: req.session.email })
     const test = new Test({
         user: user._id,
         firstName: user.firstName,
@@ -48,36 +51,24 @@ router.get('/test', async function (req, res) {
         total: Good,
     })
     await test.save()
+    res.end();
 })
 
 router.post('/answers', async function (req, res) {
     const userAnswers = req.body
-    const test = await Test.findOne({ email: req.session.name })
-    const words = test.words
-    const yourResult = result(words, userAnswers)
-    
-    test.countRight = yourResult[0]
-    test.positionRight = yourResult[1]
-    if (yourResult[0] >= 19){
-        test.total = "У Вас отличная память"
-    }
-    if (10 < yourResult[0] < 19){
-        test.total = "Очень хороший результат"
-    }
-    if (0 < yourResult[0] <=10) {
-        test.total = "Возможно, Вам нужно потренировать память"
-    }
-    if (yourResult[0] === 0) {
-        test.total = "У Вас не памяти"
-    }
-    
-    
+    const test = await Test.findOne({ email: req.session.email })
     console.log(test);
-    res.end();
+    const words = test.words
+    console.log(words)
+    // console.log(userAnswers)
+    const yourResult = result(words, userAnswers)
+    console.log(yourResult);
+
+    res.json({
+        right: yourResult[0],
+        rightP: yourResult[1],
+    });
 })
-
-
-
 
 router.get('/stat', function (req, res) {
     res.render('stat');
@@ -95,14 +86,18 @@ router.post('/sound', async function(req, res, next) {
     res.json(req.session.userName)
 })
 
+router.post('/showTest', async function (req, res, next) {
+    // new Array(4).fill(1).map((el, key) => {return {number:key+1}}) // Саша создает массив как Бог
+    const answers = [
+        {number: 1},
+        {number: 2},
+        {number: 3},
+        {number: 4},
+        {number: 5},
+    ];
+    res.json({answers});
+})
+
 
 
 module.exports = router;
-
-
-// console.log(email)
-// let user = await User.find({ 'email': email })
-// let [findmail] = await Test.find({ user: { $eq: user } })
-// console.log('1', findmail)
-// const { countRight } = findmail
-// console.log('2', countRight)

@@ -12,6 +12,9 @@ const exposeTemplate = async function (req, res, next) {
   const instructions = await hbs.getTemplate('views/instructions.hbs', {
     precompiled: true,
   });
+  const showResult = await hbs.getTemplate('views/showResult.hbs', {
+    precompiled: true,
+  });
   const playSounds = await hbs.getTemplate('views/playSounds.hbs', {
     precompiled: true,
   });
@@ -28,6 +31,7 @@ const exposeTemplate = async function (req, res, next) {
   res.instructions = instructions;
   res.test = test;
   res.stat = stat;
+  res.showResult = showResult;
   res.playSounds = playSounds;
   next();
 };

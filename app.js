@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const testRouter = require('./routes/test');
 const userRouter = require('./routes/users');
 const getRouter = require('./routes/routerGet');
-const displayRouter = require('./routes/display')
+// const displayRouter = require('./routes/display')
 
 
 const voiceRouter = require('./routes/voice');
@@ -48,7 +48,7 @@ app.use('/', userRouter);
 app.use('/', voiceRouter);
 
 app.use('/', getRouter);
-app.use('/', displayRouter);
+// app.use('/', displayRouter);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
