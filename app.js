@@ -12,9 +12,10 @@ const hbs = handlebars.create({
   partialsDir: path.join(__dirname, 'views'),
 });
 
-const indexRouter = require('./routes/index')
-const testRouter = require('./routes/test')
+const indexRouter = require('./routes/index');
+const testRouter = require('./routes/test');
 const userRouter = require('./routes/users');
+const displayRouter = require('./routes/displayRouter')
 
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', testRouter);
 app.use('/', userRouter);
+app.use('/', displayRouter);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

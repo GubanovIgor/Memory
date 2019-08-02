@@ -11,7 +11,8 @@ const testArr = [
   {value: 'Monkey'},
 ];
 
-// console.log(testArr)
+//console.log(testArr)
+
 
 const randomWords = (arr) => {
   const wordsForTest = [];
