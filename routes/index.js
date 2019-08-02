@@ -4,7 +4,7 @@ const Test = require('../models/Test')
 const { User } = require('../models/User')
 const { exposeTemplate } = require('../template');
 const Words = require('../models/Words')
-
+const result = require('./result')
 
 
 router.get('/', exposeTemplate, function (req, res) {
@@ -47,6 +47,19 @@ router.get('/test', async function (req, res) {
     await test.save()
 })
 
+router.post('/answers', async function (req, res) {
+    const userAnswers = req.body
+    const test = await Test.findOne({ email: req.session.name })
+    const words = test.words
+    const yourResult = result(words, userAnswers)
+    console.log(yourResult);
+
+    res.end();
+})
+
+
+
+
 router.get('/stat', function (req, res) {
     res.render('stat');
 });
@@ -62,7 +75,6 @@ router.post('/sound', async function(req, res, next) {
     console.log(req.session)
     res.json(req.session.userName)
 })
-
 
 
 

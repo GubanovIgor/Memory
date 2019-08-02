@@ -8,7 +8,11 @@ const { hbs } = require('./template');
 const indexRouter = require('./routes/index');
 const testRouter = require('./routes/test');
 const userRouter = require('./routes/users');
+const getRouter = require('./routes/routerGet');
 const displayRouter = require('./routes/display')
+
+
+const voiceRouter = require('./routes/voice');
 
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
@@ -38,6 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', testRouter);
 app.use('/', userRouter);
+app.use('/', voiceRouter);
+app.use('/', getRouter);
 app.use('/', displayRouter);
 
 app.listen(3000, function () {
