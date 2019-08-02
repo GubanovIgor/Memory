@@ -1,3 +1,5 @@
+const Words = require('../models/Words')
+
 const testArr = [
   {value: 'Dog'},
   {value: 'Cat'},
@@ -11,7 +13,9 @@ const testArr = [
   {value: 'Monkey'},
 ];
 
-// console.log(testArr)
+
+//console.log(testArr)
+
 
 const randomWords = (arr) => {
   const wordsForTest = [];
@@ -32,4 +36,4 @@ const randomWords = (arr) => {
   return wordsForTest;
 }
 
-console.log(randomWords(testArr));
+console.log(randomWords(allWords));
