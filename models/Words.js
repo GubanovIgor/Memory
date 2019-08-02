@@ -19,7 +19,9 @@ async function addWords() {
     }
 }
 addWords()
-console.log(arrWords)
+
+
+
 
 
 module.exports = Words;
