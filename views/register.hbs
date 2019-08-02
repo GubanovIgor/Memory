@@ -1,20 +1,20 @@
-<label class='form-description'>Чтобы начать, зарегистрируйтесь</label>
-<form id='form' method='post' action='/user/register'>
-        <p class="register">РЕГИСТРАЦИЯ</p>
-        <div id="mar-20">
-            <div class="name">
-                <input id='name' type='text' placeholder="ИМЯ" name='name' value=''>
-            </div>
-            <div class="surname">
-                <input id='surname' type='text' placeholder="ФАМИЛИЯ" name='surname' value=''>
-            </div>
-            <div class="email">
-                <input id='email' type='text' placeholder="EMAIL" name='email' value=''>
-            </div>
-            <div class="button">
-                <a class='auth' id="button" href="ff">
-                    ПОДТВЕРДИТЬ
+{{!-- <label class='form-description'>Чтобы начать, зарегистрируйтесь</label> --}}
+{{!-- <form id='form' method='post' action='/user/register'> --}}
+        <p class="register">Вход</p>
+        {{!-- <div id="mar-20"> --}}
+            {{!-- <div class="name"> --}}
+                <input class="auth-input" id='name' type='text' placeholder="ИМЯ" name='name' value=''>
+            {{!-- </div> --}}
+            {{!-- <div class="surname"> --}}
+                <input class="auth-input" id='surname' type='text' placeholder="ФАМИЛИЯ" name='surname' value=''>
+            {{!-- </div> --}}
+            {{!-- <div class="email"> --}}
+                <input class="auth-input" id='email' type='text' placeholder="EMAIL" name='email' value=''>
+            {{!-- </div> --}}
+            {{!-- <div class="button"> --}}
+                <a class='auth' id="button" href="">
+                    <div class="button auth">ПОДТВЕРДИТЬ</div>
                 </a>
-            </div>
-        </div>
-</form>
+            {{!-- </div> --}}
+        {{!-- </div> --}}
+{{!-- </form> --}}

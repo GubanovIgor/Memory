@@ -21,17 +21,14 @@ router.get('/stat', function (req, res) {
 
 router.post('/stat', async function (req, res, next) {
     let user = await User.findOne({ email: req.body.email });
-    console.log(user._id);
     let tests = await Test.find({ user: user._id })
-    console.log(tests)
-    // let countRight = tests.countRight
-    // let positionRight = tests.positionRight
-    // let total = tests.total
-    // console.log (countRight, positionRight, total)
     
     res.json(tests);
-
 });
+
+router.post('/test', async function(req, res, next) {
+
+})
 
 
 
