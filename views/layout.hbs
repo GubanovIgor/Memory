@@ -6,21 +6,40 @@
     <link href="//db.onlinewebfonts.com/c/59272c06965f3b33f8db3b47796309ca?family=Museo+300" rel="stylesheet"
         type="text/css" />
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/test.css">
+    <link rel="stylesheet" href="/stylesheets/stat.css">
+
     <script src="//cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.runtime.min.js"></script>
     <title>ФОРМА</title>
 </head>
 
 <body>
-    <section>
-        <header>
-            <h2>Header</h2>
+    <div class='box'>
+        <header class="header">
+            <div class="header_in">
+                <span>MEMORY</span>
+            </div>
         </header>
-        <div id='main'>
-            <div>
+
+        <main class='main'> 
+            <div class='body_content'>
                 {{{body}}}
             </div>
+<<<<<<< HEAD
         </div>
     </section>
+=======
+        </main>
+
+        <footer class="footer">
+            <div class="footer_in">
+                <p>Copyright © 🐝<time datetime="2019">2019</time>
+                    Elbrus Bootcamp</p>
+                <address>Moscow, Russia.</address>
+            </div>
+        </footer>
+    </div>
+>>>>>>> cf51cbbdaab1996fe6f17e38b7ae0cfb2e91e62c
     <script src="/js/stat.js"></script>
     <script src="/js/test.js"></script>
     <script src="/js/createUser.js"></script>
