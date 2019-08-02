@@ -8,7 +8,7 @@ const { hbs } = require('./template');
 const indexRouter = require('./routes/index');
 const testRouter = require('./routes/test');
 const userRouter = require('./routes/users');
-const displayRouter = require('./routes/displayRouter')
+const displayRouter = require('./routes/display')
 
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
