@@ -1,8 +1,10 @@
-<h1 class="big">Впишите в поля услышанные слова по порядку</h1>
+<label class="form-description">ЗАПОЛНИТЕ ПОЛЯ СЛОВАМИ, В ТОМ ПОРЯДКЕ,<br> В КОТОРОМ ВЫ ИХ УВИДЕЛИ</label>
 
 <form id="list_master" class="flex flex-row" method="post" action="/statistica">
+    <div class='test'>
     {{#each answers}}
-    {{>answerWord}}
+    <div class='item'>{{>answerWord}}</div>
     {{/each}}
-    <input id="send" class="send_answers button" type="submit" value="Send answers">
+    </div>
+    <input id="send" class="send_answers button" type="submit" value="ОТПРАВИТЬ">
 </form>

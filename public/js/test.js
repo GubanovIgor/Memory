@@ -1,14 +1,24 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', async (e) => {
         if (e.target.classList.contains('send_answers')) {
             e.preventDefault()
             const inputAnswers = document.querySelectorAll(".answer_word")
-            const answers = []
+            const formAnswers = []
+
             for (let i = 0; i < inputAnswers.length; i++) {
-                answers.push(inputAnswers[i].value)
+                formAnswers.push(inputAnswers[i].value)
             }
-            console.log(answers)
-            
+
+            const resp = await fetch('/answers', {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formAnswers)
+            });
+            const answers = await resp.json()
         }
-    })
-})
+    });
+});
+

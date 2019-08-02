@@ -3,18 +3,14 @@ const path = require('path');
 const logger = require('morgan');
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
-const handlebars = require('express-handlebars');
+const { hbs } = require('./template');
 
-const hbs = handlebars.create({
-  defaultLayout: 'layout',
-  extname: 'hbs',
-  layoutsDir: path.join(__dirname, 'views'),
-  partialsDir: path.join(__dirname, 'views'),
-});
-
-const indexRouter = require('./routes/index')
-const testRouter = require('./routes/test')
+const indexRouter = require('./routes/index');
+const testRouter = require('./routes/test');
 const userRouter = require('./routes/users');
+const getRouter = require('./routes/routerGet');
+const displayRouter = require('./routes/display')
+
 
 const voiceRouter = require('./routes/voice');
 
@@ -47,6 +43,8 @@ app.use('/', indexRouter);
 app.use('/', testRouter);
 app.use('/', userRouter);
 app.use('/', voiceRouter);
+app.use('/', getRouter);
+app.use('/', displayRouter);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

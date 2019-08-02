@@ -1,12 +1,15 @@
-<div>
-    <h1>Look at your results!</h1>
+<div class="form-stat">
+    <label class="form-description">ПРОВЕРЬТЕ СВОЙ РЕЗУЛЬТАТ</label>
+
+    <form id="srchForm">
+        <input id="email.srch" type="text" name="emailsrch" placeholder="EMAIL" value="">
+    </form>
+    <button class="button_stat">НАЙТИ</button>
+
     <div>
-        <form id="srchForm" >
-            <input id="email.srch" type="text" name="emailsrch" placeholder="enter your e-mail" value="">
-            <button >search</button>
-        </form>
+        {{#each tests}}
+        <div>Всего правильных слов: {{this.countRight}} На правильных позициях: {{this.positionRight}} Оценка:
+            {{this.total}}</div>
+        {{/each}}
     </div>
-    {{#each tests}}
-        <div>Всего правильных слов: {{this.countRight}} На правильных позициях: {{this.positionRight}} Оценка: {{this.total}}</div>
-    {{/each}}
 </div>
