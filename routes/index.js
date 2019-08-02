@@ -59,7 +59,8 @@ router.post('/stat', async function (req, res, next) {
 });
 
 router.post('/sound', async function(req, res, next) {
-    
+    console.log(req.session)
+    res.json(req.session.userName)
 })
 
 

@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         body: JSON.stringify(formData),
       });
       const data = await resp.json();
-      console.log(data);
-      const test = {
+      const test = { // Переименовать test
         userName: data,
       }
 
