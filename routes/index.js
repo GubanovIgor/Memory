@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Test = require('../models/Test')
+const { Test } = require('../models/Test')
 const { User } = require('../models/User')
 const { exposeTemplate } = require('../template');
 const Words = require('../models/Words')
@@ -48,7 +48,7 @@ router.post('/createTest', async function (req, res) {
         words: testWords,
         countRight: 0,
         positionRight: 0,
-        total: Good,
+        total: 'Good',
     })
     await test.save()
     res.end();
@@ -62,34 +62,12 @@ router.post('/answers', async function (req, res) {
     console.log(words)
     // console.log(userAnswers)
     const yourResult = result(words, userAnswers)
-<<<<<<< HEAD
     console.log(yourResult);
 
     res.json({
         right: yourResult[0],
         rightP: yourResult[1],
     });
-=======
-    
-    test.countRight = yourResult[0]
-    test.positionRight = yourResult[1]
-    if (yourResult[0] >= 19){
-        test.total = "У Вас отличная память"
-    }
-    if (10 < yourResult[0] < 19){
-        test.total = "Очень хороший результат"
-    }
-    if (0 < yourResult[0] <=10) {
-        test.total = "Возможно, Вам нужно потренировать память"
-    }
-    if (yourResult[0] === 0) {
-        test.total = "У Вас не памяти"
-    }
-    
-    
-    console.log(test);
-    res.end();
->>>>>>> master
 })
 
 router.get('/stat', function (req, res) {
