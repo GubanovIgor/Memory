@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
+// mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
     firstName: String,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 // const fs = require('fs')
 
-mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
+// mongoose.connect("mongodb://localhost:27017/memory", { useNewUrlParser: true })
 // const words = fs.readFileSync('words.txt', 'utf8')
 // const arrAllWords = words.split('\r\n')
 const Schema = mongoose.Schema;

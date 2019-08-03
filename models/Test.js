@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
 const { userSchema } = require('./User');
-mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
 const Schema = mongoose.Schema;
 const testSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
