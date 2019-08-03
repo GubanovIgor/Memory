@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Test = require('../models/Test')
+const { Test } = require('../models/Test')
 const { User } = require('../models/User')
 const { exposeTemplate } = require('../template');
 const Words = require('../models/Words')
@@ -48,7 +48,7 @@ router.post('/createTest', async function (req, res) {
         words: testWords,
         countRight: 0,
         positionRight: 0,
-        total: Good,
+        total: 'Good',
     })
     await test.save()
     res.end();

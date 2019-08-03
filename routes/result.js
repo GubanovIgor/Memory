@@ -1,20 +1,24 @@
 const a = ['кот', 'собака', 'цветок'];
-const b = ['собака', 'мышь', 'цветок'];
+const b = ['собака', 'мышь', 'Цветок'];
 
 const result = (answer, userAnswer) => {
-  let countMatchedOrder = 0;
-  let countMatchedWord = 0;
+  let order = 0;
+  let allRight = 0;
   let length = answer.length;
+  
+  for(let i = 0; i < userAnswer.length; i++) {
+    userAnswer[i] = userAnswer[i].toLowerCase();
+  }
 
   for (let i = 0; i < length; i++) {
     if (answer[i].toLowerCase() == userAnswer[i].toLowerCase()) {
-      countMatchedOrder++;
+      order++;
     }
-    if (userAnswer.indexOf(answer[i]) >= 0) {
-      countMatchedWord++;
+    if (userAnswer.indexOf(answer[i].toLowerCase()) >= 0) {
+      allRight++;
     }
   }
-  return [countMatchedOrder, countMatchedWord];
+  return [order, allRight];
 };
 
 
