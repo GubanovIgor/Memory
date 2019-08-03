@@ -16,7 +16,7 @@ const voiceRouter = require('./routes/voice');
 
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/memory', { useNewUrlParser: true });
+mongoose.connect(`mongodb://Igor:onFuture2012@ds159634.mlab.com:59634/heroku_sf801k4k`, { useNewUrlParser: true });
 
 var app = express();
 app.use(logger('dev'));
