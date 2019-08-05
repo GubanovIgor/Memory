@@ -74,7 +74,7 @@ async function addWords() {
         await words.save()
     }  
 }
-addWords()
+// addWords()
 
 
 
