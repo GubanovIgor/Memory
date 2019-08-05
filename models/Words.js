@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 // const fs = require('fs')
 
-mongoose.connect(`mongodb://Igor:onFuture2012@ds159634.mlab.com:59634/heroku_sf801k4k`, { useNewUrlParser: true });
+// mongoose.connect(`mongodb://Igor:onFuture2012@ds159634.mlab.com:59634/heroku_sf801k4k`, { useNewUrlParser: true });
 // const words = fs.readFileSync('words.txt', 'utf8')
 // const arrAllWords = words.split('\r\n')
 const Schema = mongoose.Schema;
