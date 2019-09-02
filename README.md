@@ -13,10 +13,10 @@ Memory - это приложение по тестированию памяти.
 - вывод результатов тестирования на экран
 
 ## Authors
-[Анита Янтикова] (https://github.com/AnitaJD)
-[Ольга Никитина] (https://github.com/Olya-Nik)
-[Андрей Кроликов] (https://github.com/krolikovAA)
-[Игорь Губанов] (https://github.com/GubanovIgor)
+[Анита Янтикова](https://github.com/AnitaJD)
+[Ольга Никитина](https://github.com/Olya-Nik)
+[Андрей Кроликов](https://github.com/krolikovAA)
+[Игорь Губанов](https://github.com/GubanovIgor)
 
 ## Next Steps
 Добавить дополнительные функции
