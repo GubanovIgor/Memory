@@ -13,9 +13,9 @@ Memory - это приложение по тестированию памяти.
 - вывод результатов тестирования на экран
 
 ## Authors
-[Анита Янтикова](https://github.com/AnitaJD)
-[Ольга Никитина](https://github.com/Olya-Nik)
-[Андрей Кроликов](https://github.com/krolikovAA)
+[Анита Янтикова](https://github.com/AnitaJD)<br>
+[Ольга Никитина](https://github.com/Olya-Nik)<br>
+[Андрей Кроликов](https://github.com/krolikovAA)<br>
 [Игорь Губанов](https://github.com/GubanovIgor)
 
 ## Next Steps
