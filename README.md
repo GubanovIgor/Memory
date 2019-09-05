@@ -1,5 +1,5 @@
 # MEMORY
-Memory - это приложение по тестированию памяти.
+Memory - это приложение по тестированию памяти.<br>
 https://memory-elbrus.herokuapp.com/
 
 ![image_1](image_1.png)
